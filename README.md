@@ -24,7 +24,7 @@ Version 2.1
 
 ## Project Overview
 
-Welcome to the Battery Electric Vehicle Simulation project, an extension of Isaac Ito's original work at MathWorks on the [Battery Electric Vehicle Simulink model](https://github.com/mathworks/Simscape-Battery-Electric-Vehicle-Model) which was method under the CMI-Rogers initiative. Our goal in this project was to build upon the foundation laid by Isaac Ito so that we could tailor it to our specific requirements.
+Welcome to the Battery Electric Vehicle Simulation project, an extension of Isaac Ito's original work at MathWorks on the [Battery Electric Vehicle Simulink model](https://github.com/mathworks/Simscape-Battery-Electric-Vehicle-Model) which was nodified under the CMI-Rogers initiative. Our goal in this project was to build upon the foundation laid by Isaac Ito so that we could tailor it to our specific requirements.
 
 ## Objectives
 
