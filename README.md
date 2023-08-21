@@ -4,7 +4,51 @@
 
 Version 2.1
 
-## Introduction
+## Table of Contents
+
+- [Battery Electric Vehicle Model in Simscape™](#battery-electric-vehicle-model-in-simscape)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Objectives](#objectives)
+  - [Implementation Highlights](#implementation-highlights)
+  - [Model Documentation](#model-documentation)
+    - [Introduction](#introduction)
+    - [What's New in 2.1 (March, 2023)](#whats-new-in-21-march-2023)
+    - [What's New in 2.0 (February, 2023)](#whats-new-in-20-february-2023)
+    - [Tool Requirements](#tool-requirements)
+    - [How to Use](#how-to-use)
+    - [How to Use in MATLAB Online](#how-to-use-in-matlab-online)
+    - [Additional Notes](#additional-notes)
+    - [See Also](#see-also)
+    - [License](#license)
+
+## Project Overview
+
+Welcome to the Battery Electric Vehicle Simulation project, an extension of Isaac Ito's original work at MathWorks on the [Battery Electric Vehicle Simulink model](https://github.com/mathworks/Simscape-Battery-Electric-Vehicle-Model) which was method under the CMI-Rogers initiative. Our goal in this project was to build upon the foundation laid by Isaac Ito so that we could tailor it to our specific requirements.
+
+## Objectives
+
+Incorporating modifications that align with our project goals, we identified three key objectives:
+
+1. **Persistent battery state.** One of our priorities was to retain the battery status between simulation runs, allowing for a seamless continuation of testing and analysis.
+2. **Battery aging simulation.** We aimed to enhance the realism of the simulation by implementing battery aging over time with regular use, providing insights into the long-term behavior of electric vehicle batteries.
+3. **Dynamic battery charging.** To mimic real-world scenarios, we introduced a mechanism for the battery to recharge when depleted, further enriching the simulation's accuracy.
+
+## Implementation Highlights
+
+To achieve these objectives, we made substantial adjustments to two primary subcomponents of the original model:
+
+- **Controller & Environment**. Within this subcomponent, we redefined the driving profile to transition to a stationary state when the battery's charge is depleted, reflecting a more accurate representation of a depleted battery's impact on driving conditions.
+  ![Driving profile modification](./docs/images/MATLAB-driving.png)
+  
+- **System Battery.** Here, we implemented a constant charging block that supplies a consistent current to the battery while it powers the vehicle. This modification enables us to model the battery charging process during operation realistically.
+  ![Battery charging modification](./docs/images/MATLAB-charging.png)
+
+This repository is a testament to our collaborative efforts in extending Isaac Ito's foundational work to create a versatile and practical Battery Electric Vehicle Simulation. We hope that our modifications and enhancements prove valuable to the electric vehicle research and simulation community.
+
+## Model Documentation
+
+### Introduction
 
 This is a MATLAB&reg; Project containing
 a [Battery Electric Vehicle (BEV) model](BEV/README.md) and
@@ -41,7 +85,7 @@ Watch the [YouTube video][url_yt] introducing the model.
 
 [url_yt]:https://www.youtube.com/watch?v=i07MNXZc42c
 
-## What's New in 2.1 (March, 2023)
+### What's New in 2.1 (March, 2023)
 
 - The project has been updated to MATLAB R2023a.
 - A shortcut button to open **MATLAB Test Manager**
@@ -50,7 +94,7 @@ Watch the [YouTube video][url_yt] introducing the model.
 
 See [Change Log](ChangeLog.md) for more details.
 
-## What's New in 2.0 (February, 2023)
+### What's New in 2.0 (February, 2023)
 
 - BEV system model uses updated components and
   has simpler and easier configurability
@@ -79,7 +123,7 @@ See [Change Log](ChangeLog.md) for more details.
 
 See [Change Log](ChangeLog.md) for more details.
 
-## Tool Requirements
+### Tool Requirements
 
 Supported MATLAB Version:
 R2023a and newer releases
@@ -96,14 +140,14 @@ Optional:
 [MATLAB Test (from R2023a)](https://www.mathworks.com/products/matlab-test.html)
 [Parallel Computing Toolbox&trade;](https://www.mathworks.com/products/parallel-computing.html)
 
-## How to Use
+### How to Use
 
 Open `BatteryElectricVehicle.prj` in MATLAB, and
 it will automatically open the Live Script `BEV_main_script.mlx`.
 The script contains the description of the model and
 hyperlinks to models and scripts.
 
-## How to Use in MATLAB Online
+### How to Use in MATLAB Online
 
 You can try this in [MATLAB Online][url_online].
 In MATLAB Online, from the **HOME** tab in the toolstrip,
@@ -115,13 +159,13 @@ click **Add** button, and select **Save to MATLAB Drive**.
 
 [url_online]: https://www.mathworks.com/products/matlab-online.html
 
-## Additional Notes
+### Additional Notes
 
 - [Using MATLAB Project](docs/Using-MATLAB-Project.md)
 
 - [MATLAB Testing Framework and Beyond](docs/MATLAB-Testing-Framework.md)
 
-## See Also
+### See Also
 
 [Electric Vehicle Design with Simscape][url-bev-design]
 provides BEV design workflows using detailed models
@@ -138,10 +182,12 @@ the [BEV model in Simscape][url-bev] project.
 [url-bev-design]: https://www.mathworks.com/matlabcentral/fileexchange/124795
 [url-hev-powersplit]: https://www.mathworks.com/matlabcentral/fileexchange/92820
 
-## License
+### License
 
 See [`license.txt`](license.txt).
 
 <hr>
 
 _Copyright 2020-2023 The MathWorks, Inc._
+
+_Please note that this project is a derivative work of Isaac Ito's original [Battery Electric Vehicle Simulink model](https://github.com/mathworks/Simscape-Battery-Electric-Vehicle-Model). Isaac Ito's work can be found at [MathWorks](https://www.mathworks.com/matlabcentral/fileexchange/82250-battery-electric-vehicle-model-in-simscape). Our modifications are aimed at addressing specific simulation needs and may have diverged from the original implementation._
